@@ -1,0 +1,296 @@
+/* ============================================================
+   CONTACT — "SEND WORD / 伝言"
+   ============================================================ */
+#contact {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+#contact .kanji-watermark {
+  bottom: 5%;
+  right: -3%;
+  opacity: 0.035;
+  color: var(--crimson);
+}
+
+/* --- Dojo Layout --- */
+.contact-dojo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Red lantern decorations --- */
+.contact-lanterns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-lantern-svg {
+  width: 30px;
+  opacity: 0.4;
+  animation: bob 4s ease-in-out infinite;
+}
+
+.contact-lantern-svg:nth-child(2) {
+  animation-delay: 1s;
+}
+
+/* --- Form Styles --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem 0.8rem;
+  background: rgba(8, 10, 18, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 184, 92, 0.15);
+  border-bottom: 2px solid rgba(230, 184, 92, 0.4);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(230, 184, 92, 0.6);
+  border-bottom-color: var(--gold-light);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(230,184,92,0.15), 0 0 20px rgba(230,184,92,0.2);
+  outline: none;
+  background: rgba(11, 14, 26, 0.9);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(138, 143, 168, 0.5);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* --- Submit Stamp Button --- */
+.btn-submit-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 3rem;
+  background: rgba(11, 14, 26, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 28, 28, 0.4);
+  border-radius: 4px;
+  color: var(--crimson-light);
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-spring);
+  overflow: hidden;
+  align-self: flex-start;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-submit-stamp::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(232,28,28,0.3), transparent);
+  transition: left 0.6s var(--ease-smooth);
+}
+
+.btn-submit-stamp:hover::before {
+  left: 200%;
+}
+
+.btn-submit-stamp:hover {
+  color: var(--text-primary);
+  border-color: var(--crimson-light);
+  box-shadow: var(--glow-ultra-red), 0 10px 30px rgba(0,0,0,0.5);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn-submit-stamp:active {
+  animation: stampPress 0.3s var(--ease-spring);
+}
+
+.btn-submit-stamp .stamp-jp {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* --- Ema Contact Plaques --- */
+.contact-plaques {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.ema-plaque {
+  background: rgba(11, 14, 26, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(230, 184, 92, 0.3);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s var(--ease-spring);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: bob 5s ease-in-out infinite;
+}
+
+.ema-plaque:nth-child(2) { animation-delay: 0.8s; }
+.ema-plaque:nth-child(3) { animation-delay: 1.6s; }
+.ema-plaque:nth-child(4) { animation-delay: 2.4s; }
+
+.ema-plaque::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 12px;
+  background: var(--crimson-light);
+  border-radius: 1px;
+  box-shadow: var(--glow-red-sm);
+}
+
+.ema-plaque:hover {
+  border-color: var(--gold-light);
+  box-shadow: var(--glow-gold), 0 10px 30px rgba(0,0,0,0.5);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.ema-icon {
+  font-size: 1.2rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(192,57,43,0.1);
+  border: 1px solid rgba(192,57,43,0.25);
+  flex-shrink: 0;
+}
+
+.ema-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.ema-label {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.ema-value {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* --- Success Message --- */
+.submit-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.submit-success.show {
+  display: block;
+  animation: fadeInUp 0.6s ease;
+}
+
+.success-kanji {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  text-shadow: var(--glow-gold-sm);
+}
+
+.success-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .contact-dojo {
+    grid-template-columns: 1fr;
+  }
+  .contact-plaques {
+    order: -1;
+  }
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding: 3rem 0 7rem;
+  text-align: center;
+  background: var(--bg-primary);
+  border-top: 1px solid rgba(240,236,228, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-text {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-text .jp {
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+.footer-text .crimson {
+  color: var(--crimson);
+}

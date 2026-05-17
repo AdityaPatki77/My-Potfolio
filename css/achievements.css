@@ -1,0 +1,191 @@
+/* ============================================================
+   WALL OF HONOR — Premium Display
+   ============================================================ */
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.honor-card {
+    position: relative;
+    background: rgba(10, 11, 20, 0.4);
+    border: 1px solid rgba(227, 41, 41, 0.15);
+    border-radius: 20px;
+    padding: 2.5rem;
+    overflow: hidden;
+    transition: all 0.5s var(--ease-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.honor-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--crimson-light);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), var(--glow-red-sm);
+    background: rgba(15, 16, 30, 0.6);
+}
+
+.honor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-accent);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+.honor-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.honor-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.honor-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.honor-image-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #05060a;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.honor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+/* --- Split Image Layout for Multi-Photo Achievements --- */
+.honor-images-split {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    aspect-ratio: 16/10;
+}
+
+.honor-image-main,
+.honor-image-side {
+    position: relative;
+    background: #05060a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(230, 184, 92, 0.15);
+    transition: all 0.4s var(--ease-smooth);
+}
+
+.honor-image-main img,
+.honor-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.honor-image-main:hover img,
+.honor-image-side:hover img {
+    opacity: 1;
+}
+
+.honor-card:hover .honor-image-main img {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.honor-card:hover .honor-image-side img {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+}
+
+.honor-card:hover .honor-image-side {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(230, 184, 92, 0.2);
+}
+
+.honor-image-sub {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 30%;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    transition: transform 0.4s var(--ease-spring);
+}
+
+.honor-card:hover .honor-image-sub {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.honor-img-sub {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.honor-card:hover .honor-img {
+    opacity: 1;
+}
+
+.honor-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--crimson);
+    color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.honor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}

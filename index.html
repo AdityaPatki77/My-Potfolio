@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Patki | Samurai Engineer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio of Aditya Patki - Data Engineer, AI Developer, Builder of Worlds. A blend of ancient samurai culture and neon tech.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&family=Noto+Serif+JP:wght@400;700;900&family=Zen+Dots&family=Sawarabi+Gothic&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/experience.css">
+    <link rel="stylesheet" href="css/achievements.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/loader.js" defer></script>
+    <script src="js/cursor.js" defer></script>
+    <script src="js/sakura.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/skills.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/experience.js" defer></script>
+    <script src="js/about.js" defer></script>
+    <script src="js/contact.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body style="overflow-y: hidden;">
+
+    <!-- Cinematic Overlays -->
+    <div class="letterbox letterbox-top"></div>
+    <div class="letterbox letterbox-bottom"></div>
+
+    <!-- Background Layers -->
+    <div class="cyber-grid"></div>
+    <div class="vignette"></div>
+    
+    <!-- Cinematic HUD -->
+    <div class="hud-overlay">
+        <div class="hud-corner hud-top-left"></div>
+        <div class="hud-corner hud-top-right"></div>
+        <div class="hud-corner hud-bottom-left"></div>
+        <div class="hud-corner hud-bottom-right"></div>
+        <div class="hud-scanning-line"></div>
+        <div class="hud-data hud-data-1">SYSTEM_STATUS: ACTIVE // BATTLE_READY</div>
+        <div class="hud-data hud-data-2">LATENCY: 12ms // CORE_SYNC: 98%</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Sakura Canvas Container -->
+    <div id="sakura-canvas"></div>
+
+    <!-- 0. LOADER -->
+    <div id="loader">
+        <svg id="loader-torii" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <!-- Torii Gate Path -->
+            <path class="torii-path torii-draw"
+                d="M10,30 L190,30 M20,45 L180,45 M40,30 L40,140 M160,30 L160,140 M40,65 L160,65 M100,45 L100,65" />
+        </svg>
+        <div id="loader-kanji">
+            <span class="char">技</span>
+            <span class="char">術</span>
+            <span class="char">者</span>
+            <span class="char" style="margin: 0 10px;">·</span>
+            <span class="char">創</span>
+            <span class="char">造</span>
+            <span class="char">者</span>
+            <span class="char" style="margin: 0 10px;">·</span>
+            <span class="char">開</span>
+            <span class="char">拓</span>
+            <span class="char">者</span>
+        </div>
+        <div id="loader-name">Aditya Patki</div>
+        <div id="loader-wipe"></div>
+    </div>
+
+    <div id="main-content">
+
+        <!-- NAVBAR -->
+        <nav id="navbar">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-kanji">刀</span>
+                <span>AP</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#skills" class="nav-link">
+                    <span class="en">ARSENAL</span>
+                    <span class="jp">武器</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <span class="en">WORK</span>
+                    <span class="jp">作品</span>
+                </a>
+                <a href="#experience" class="nav-link">
+                    <span class="en">JOURNEY</span>
+                    <span class="jp">旅</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <span class="en">WARRIOR</span>
+                    <span class="jp">武者</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="en">MESSAGE</span>
+                    <span class="jp">伝言</span>
+                </a>
+            </div>
+
+            <div class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- MOBILE NAV OVERLAY -->
+        <div id="mobile-nav">
+            <a href="#hero" class="mobile-nav-link">HOME <span class="jp-sub">ホーム</span></a>
+            <a href="#skills" class="mobile-nav-link">ARSENAL <span class="jp-sub">武器</span></a>
+            <a href="#projects" class="mobile-nav-link">CHRONICLES <span class="jp-sub">伝説</span></a>
+            <a href="#experience" class="mobile-nav-link">JOURNEY <span class="jp-sub">旅</span></a>
+            <a href="#achievements" class="mobile-nav-link">HONOR <span class="jp-sub">名誉</span></a>
+            <a href="#about" class="mobile-nav-link">WARRIOR <span class="jp-sub">武者</span></a>
+            <a href="#contact" class="mobile-nav-link">SEND WORD <span class="jp-sub">伝言</span></a>
+        </div>
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero">
+            <div class="hero-atmosphere">
+                <div class="hero-hud-data-point top-left">COORD_X: 34.0522 // COORD_Y: -118.2437</div>
+                <div class="hero-hud-data-point top-right">SECTOR: 07 // NODE: DELTA_9</div>
+                <div class="hero-hud-data-point bottom-left">CORE_TEMP: 34°C // STABLE</div>
+                <div class="hero-hud-data-point bottom-right">UPTIME: 99.99% // V_01.4</div>
+            </div>
+
+            <!-- Mountain Silhouette via CSS shapes or SVG -->
+            <div class="hero-landscape">
+                <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+                    <path fill="#070810"
+                        d="M0,300 L0,150 Q50,100 100,140 T250,90 T400,180 T600,100 T800,200 T1000,120 L1000,300 Z"
+                        opacity="0.6" />
+                    <path fill="#0a0c16"
+                        d="M0,300 L0,200 Q80,150 150,220 T400,160 T650,250 T850,190 T1000,240 L1000,300 Z" />
+                </svg>
+            </div>
+
+            <div class="hero-moon"></div>
+
+            <div class="kanji-watermark" data-speed="0.2">侍エンジニア</div>
+
+            <div class="hero-content container">
+                <div class="hero-split-grid">
+                    <div class="hero-info-pane">
+                        <h1 class="hero-name glitch-hover">Aditya Patki</h1>
+                        <div class="hero-title-wrapper">
+                            <span id="typed-title"></span>
+                        </div>
+                        <p class="hero-tagline">Forging data systems with the precision of a blade.</p>
+                        <div class="hero-ctas">
+                            <a href="#projects" class="btn-ema btn-ema-primary">
+                                <span class="en">VIEW WORK</span>
+                                <span class="jp">実績を見る</span>
+                            </a>
+                            <a href="#contact" class="btn-ema">
+                                <span class="en">CONTACT</span>
+                                <span class="jp">連絡する</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-terminal-pane">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="terminal-button-dot red"></span>
+                                <span class="terminal-button-dot yellow"></span>
+                                <span class="terminal-button-dot green"></span>
+                                <span class="terminal-title">SAMURAI_CORE // v1.0.4</span>
+                            </div>
+                            <div class="terminal-body" id="hero-terminal-console">
+                                <div class="terminal-line system-line">[SYSTEM] Initializing Samurai Protocols...</div>
+                                <div class="terminal-line success-line">[SUCCESS] Neon context synchronized // status: nominal</div>
+                                <div class="terminal-line">[INFO] Connection established: s3://patki-warehouse</div>
+                                <div class="terminal-line">[PIPELINE] Medallion compiling: 18 nodes processed</div>
+                            </div>
+                            <div class="terminal-actions">
+                                <button class="btn-terminal-action" id="btn-sync-core">SYNC CORE</button>
+                                <button class="btn-terminal-action" id="btn-clear-logs">CLEAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Holographic Weapon Rack (RPG Loadout HUD) -->
+                <div class="hero-loadout-hud">
+                    <div class="hud-label-wrapper">
+                        <span class="hud-label-jp">装備選択</span>
+                        <span class="hud-label-en">EQUIP ACTIVE ARSENAL</span>
+                    </div>
+                    
+                    <div class="hud-weapons-dock">
+                        <!-- Weapon 1: Python Data Blade -->
+                        <div class="hud-weapon-slot active" data-weapon="katana" data-name="KATANA // DATA BLADE" data-desc="A sleek cybernetic sword pulsing with execution power. Optimizes runtime processes." data-stats="ATK: 95 | CRIT: +95% RUNTIME | CLASS: LEGENDARY">
+                            <div class="slot-neon-border"></div>
+                            <div class="weapon-icon-wrapper">
+                                <svg class="weapon-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--crimson)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M19 5L5 19"/>
+                                    <path d="M17.5 3.5L20.5 6.5"/>
+                                    <path d="M14 10l-4 4"/>
+                                </svg>
+                            </div>
+                            <div class="weapon-meta">
+                                <span class="weapon-slot-id">SLOT_01</span>
+                                <span class="weapon-name">KATANA</span>
+                            </div>
+                        </div>
+
+                        <!-- Weapon 2: AWS Cloud Bow -->
+                        <div class="hud-weapon-slot" data-weapon="yumi" data-name="YUMI // CLOUD BOW" data-desc="A high-range composite bow pulling links from S3. Spreads loadout across multiple cloud nodes." data-stats="RANGE: 99 | CRIT: +88% SERVICE | CLASS: EPIC">
+                            <div class="slot-neon-border"></div>
+                            <div class="weapon-icon-wrapper">
+                                <svg class="weapon-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 4c-5 0-9 4-9 9s4 9 9 9"/>
+                                    <path d="M11 13h10M11 13l3-3M11 13l3 3"/>
+                                    <path d="M20 4v18" stroke-dasharray="2 2"/>
+                                </svg>
+                            </div>
+                            <div class="weapon-meta">
+                                <span class="weapon-slot-id">SLOT_02</span>
+                                <span class="weapon-name">YUMI</span>
+                            </div>
+                        </div>
+
+                        <!-- Weapon 3: Pipeline Shield -->
+                        <div class="hud-weapon-slot" data-weapon="tate" data-name="TATE // PIPELINE SHIELD" data-desc="A heavy carbon fiber shield built for schema design. Guards data pipelines from structural leaks." data-stats="DEF: 92 | CRIT: +92% QUALITY | CLASS: MYTHIC">
+                            <div class="slot-neon-border"></div>
+                            <div class="weapon-icon-wrapper">
+                                <svg class="weapon-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L4 5v6c0 5.5 3.5 10 8 11 4.5-1 8-5.5 8-11V5l-8-3z"/>
+                                    <path d="M12 6v10M9 9h6M9 13h6"/>
+                                </svg>
+                            </div>
+                            <div class="weapon-meta">
+                                <span class="weapon-slot-id">SLOT_03</span>
+                                <span class="weapon-name">TATE</span>
+                            </div>
+                        </div>
+
+                        <!-- Weapon 4: Synapse Spear -->
+                        <div class="hud-weapon-slot" data-weapon="yari" data-name="YARI // SYNAPSE SPEAR" data-desc="A tactical polearm channeling artificial intelligence. Pierces attention boundaries." data-stats="ATK: 92 | CRIT: +92% ATTENTION | CLASS: MYTHIC">
+                            <div class="slot-neon-border"></div>
+                            <div class="weapon-icon-wrapper">
+                                <svg class="weapon-svg-icon" viewBox="0 0 24 24" fill="none" stroke="var(--purple-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L3 21h18L12 2z" stroke-dasharray="3 3"/>
+                                    <path d="M12 2v20"/>
+                                    <path d="M7 8h10M9 12h6"/>
+                                </svg>
+                            </div>
+                            <div class="weapon-meta">
+                                <span class="weapon-slot-id">SLOT_04</span>
+                                <span class="weapon-name">YARI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Holographic Telemetry Screen -->
+                    <div class="hud-telemetry-panel">
+                        <div class="telemetry-grid">
+                            <div class="telemetry-column main-detail">
+                                <span class="telemetry-label">ACTIVE LOADOUT</span>
+                                <strong class="telemetry-value" id="hud-weapon-active-name">KATANA // DATA BLADE</strong>
+                                <p class="telemetry-desc" id="hud-weapon-active-desc">A sleek cybernetic sword pulsing with execution power. Optimizes runtime processes.</p>
+                            </div>
+                            <div class="telemetry-column stats-detail">
+                                <span class="telemetry-label">COMBAT TELEMETRY</span>
+                                <div class="telemetry-stats-rows" id="hud-weapon-active-stats">
+                                    <span class="telemetry-stat">ATK: 95</span>
+                                    <span class="telemetry-stat">CRIT: +95% RUNTIME</span>
+                                    <span class="telemetry-stat rarity-legendary">CLASS: LEGENDARY</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="telemetry-hud-decoration">
+                            <div class="laser-scanner"></div>
+                            <div class="corner-mark top-left"></div>
+                            <div class="corner-mark top-right"></div>
+                            <div class="corner-mark bottom-left"></div>
+                            <div class="corner-mark bottom-right"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-scroll-indicator"
+                    onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+                    <div class="scroll-label">SCROLL</div>
+                    <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="var(--crimson)" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Marquee Strip -->
+        <div class="tech-marquee-strip">
+            <div class="marquee-track">
+                <span class="marquee-item">⚡ Python</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">☁️ AWS</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">❄️ Snowflake</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🔥 PySpark</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🤖 Gemini AI</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🌀 Airflow</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">📦 Docker</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🗄️ dbt</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🔗 LangChain</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🚀 FastAPI</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">💾 Databricks</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🕸️ Node.js</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">⚙️ GoLang</span>
+                <span class="marquee-sep">//</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="marquee-item">⚡ Python</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">☁️ AWS</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">❄️ Snowflake</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🔥 PySpark</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🤖 Gemini AI</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🌀 Airflow</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">📦 Docker</span>
+                <span class="marquee-sep">//</span>
+                <span class="marquee-item">🗄️ dbt</span>
+                <span class="marquee-sep">//</span>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- 2. SKILLS (ARSENAL) -->
+        <section id="skills">
+            <div class="skills-slash"></div>
+            <div class="kanji-watermark" data-speed="0.1">武器</div>
+
+            <div class="container reveal">
+                <div class="section-header cyber-reveal">
+                    <span class="section-label">ARSENAL</span>
+                    <h2 class="section-title justify-center">The Arsenal <span class="jp">武器</span></h2>
+                </div>
+
+                <div class="arsenal-dashboard">
+
+                    <!-- Category 1: Languages -->
+                    <div class="arsenal-column glow-crimson">
+                        <div class="arsenal-column-header">
+                            <span class="column-jp">言語</span>
+                            <h3 class="column-title">LANGUAGES</h3>
+                        </div>
+                        <div class="arsenal-skills-list">
+                            
+                            <!-- Python -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2C6.5 2 6 4.5 6 7h4v1H6c-2.5 0-4 1.5-4 4s1.5 4 4 4h2v-2c0-1.7 1.3-3 3-3h5c1.7 0 3-1.3 3-3V7c0-2.5-1.5-5-7-5z" stroke="var(--crimson-light)" />
+                                            <path d="M12 22c5.5 0 6-2.5 6-5h-4v-1h4c2.5 0 4-1.5 4-4s-1.5-4-4-4h-2v2c0 1.7-1.3 3-3 3H8c-1.7 0-3 1.3-3 3v1c0 2.5 1.5 5 7 5z" stroke="var(--gold-light)" />
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Python</h4>
+                                        <span class="skill-rarity legendary">LEGENDARY</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 95</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>CORE ENGINE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+95% RUNTIME</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="95%" style="--progress-color: var(--crimson);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">95%</span>
+                                </div>
+                            </div>
+
+                            <!-- SQL -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3" stroke="var(--crimson)"/>
+                                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="var(--crimson)"/>
+                                            <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" stroke="var(--crimson)" stroke-dasharray="3 3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">SQL</h4>
+                                        <span class="skill-rarity legendary">LEGENDARY</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 90</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>QUERY BLADE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+90% COMPILE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="90%" style="--progress-color: var(--crimson);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">90%</span>
+                                </div>
+                            </div>
+
+                            <!-- Java -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M6 8h12v7c0 2.8-2.2 5-5 5H9c-2.8 0-5-2.2-5-5V8z" stroke="var(--gold-light)"/>
+                                            <path d="M18 11h2c1.7 0 3 1.3 3 3s-1.3 3-3 3h-2" stroke="var(--gold-light)"/>
+                                            <path d="M9 2v3M12 1v4M15 2v3" stroke="var(--crimson)" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Java</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 80</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>OBJECT RUNTIME</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+80% STRUCT</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="80%" style="--progress-color: var(--crimson);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">80%</span>
+                                </div>
+                            </div>
+
+                            <!-- Go -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 13h8M3 7h15M3 19h11" stroke="var(--cyan)"/>
+                                            <path d="m16 8 4 4-4 4" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Go</h4>
+                                        <span class="skill-rarity rare">RARE</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 75</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>CONCURRENT SYS</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+75% THROUGH</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="75%" style="--progress-color: var(--crimson);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">75%</span>
+                                </div>
+                            </div>
+
+                            <!-- JavaScript -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--gold)"/>
+                                            <path d="M14 17h3M14 10h1.5A1.5 1.5 0 0 1 17 11.5v0a1.5 1.5 0 0 1-1.5 1.5H14" stroke="var(--gold)" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">JavaScript</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 85</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>DOM HUD LINK</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+85% DYNAMIC</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="85%" style="--progress-color: var(--crimson);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">85%</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Frameworks -->
+                    <div class="arsenal-column glow-gold">
+                        <div class="arsenal-column-header">
+                            <span class="column-jp">枠組み</span>
+                            <h3 class="column-title">FRAMEWORKS</h3>
+                        </div>
+                        <div class="arsenal-skills-list">
+
+                            <!-- FastAPI -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" stroke="var(--gold-light)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">FastAPI</h4>
+                                        <span class="skill-rarity legendary">LEGENDARY</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 90</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>ASYNC ENGINE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+90% RESPONSE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="90%" style="--progress-color: var(--gold);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">90%</span>
+                                </div>
+                            </div>
+
+                            <!-- PySpark -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="4" stroke="var(--gold)"/>
+                                            <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M19.1 4.9l-2.8 2.8M7.7 16.3l-2.8 2.8" stroke="var(--gold)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">PySpark</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 88</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>CLUSTER COMP</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+88% PARALLEL</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="88%" style="--progress-color: var(--gold);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">88%</span>
+                                </div>
+                            </div>
+
+                            <!-- React -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" stroke="var(--cyan)"/>
+                                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(90 12 12)" stroke="var(--cyan)"/>
+                                            <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(150 12 12)" stroke="var(--cyan)"/>
+                                            <circle cx="12" cy="12" r="1.5" fill="var(--cyan)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">React</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 80</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>TACTICAL HUD</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+80% INTERACT</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="80%" style="--progress-color: var(--gold);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">80%</span>
+                                </div>
+                            </div>
+
+                            <!-- Node.js -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2 2 7v10l10 5 10-5V7L12 2z" stroke="var(--gold-light)"/>
+                                            <circle cx="12" cy="7" r="2" stroke="var(--gold-light)"/>
+                                            <circle cx="6" cy="15" r="2" stroke="var(--gold-light)"/>
+                                            <circle cx="18" cy="15" r="2" stroke="var(--gold-light)"/>
+                                            <path d="M12 9v4M7.5 14l3.5-2M16.5 14l-3.5-2" stroke="var(--gold-light)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Node.js</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 82</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>ASYNC SERVER</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+82% EVENTLOOP</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="82%" style="--progress-color: var(--gold);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">82%</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Data & Cloud -->
+                    <div class="arsenal-column glow-cyan">
+                        <div class="arsenal-column-header">
+                            <span class="column-jp">雲と情報</span>
+                            <h3 class="column-title">DATA & CLOUD</h3>
+                        </div>
+                        <div class="arsenal-skills-list">
+
+                            <!-- AWS -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M17.5 19A5.5 5.5 0 0 0 18 8h-1.26a8 8 0 1 0-11.62 8.58" stroke="var(--cyan)"/>
+                                            <path d="M12 12v6M9 15l3 3 3-3" stroke="var(--cyan)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">AWS</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 88</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>DISTRIBUTED INFRA</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+88% SERVICE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="88%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">88%</span>
+                                </div>
+                            </div>
+
+                            <!-- Snowflake -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1" stroke="var(--cyan)"/>
+                                            <path d="m10 5 2-3 2 3M14 19l-2 3-2-3M5 10l-3 2 3 2M19 14l3-2-3-2" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Snowflake</h4>
+                                        <span class="skill-rarity mythic">MYTHIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 92</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>CLOUD WAREHOUSE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+92% STORAGE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="92%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">92%</span>
+                                </div>
+                            </div>
+
+                            <!-- Databricks -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m12 2 10 17H2L12 2z" stroke="var(--cyan)"/>
+                                            <path d="m12 8 5 9H7l5-9z" stroke="var(--gold)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Databricks</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 85</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>ANALYTIC ENGINE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+85% COMPUTE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="85%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">85%</span>
+                                </div>
+                            </div>
+
+                            <!-- Airflow -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M2 8h16.5a3.5 3.5 0 1 0-3.5-3.5" stroke="var(--cyan)" stroke-linecap="round"/>
+                                            <path d="M2 12h13.5a3.5 3.5 0 1 1-3.5 3.5" stroke="var(--cyan)" stroke-linecap="round"/>
+                                            <path d="M2 16h8" stroke="var(--cyan)" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Airflow</h4>
+                                        <span class="skill-rarity legendary">LEGENDARY</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 90</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>PIPELINE ORCH</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+90% SCHEDULE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="90%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">90%</span>
+                                </div>
+                            </div>
+
+                            <!-- dbt -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="10" height="10" stroke="var(--cyan)"/>
+                                            <rect x="11" y="11" width="10" height="10" stroke="var(--cyan)"/>
+                                            <line x1="8" y1="13" x2="13" y2="8" stroke="var(--gold)" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">dbt</h4>
+                                        <span class="skill-rarity mythic">MYTHIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 92</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>SQL TRANSFORMS</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+92% QUALITY</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="92%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">92%</span>
+                                </div>
+                            </div>
+
+                            <!-- MongoDB -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2C12 2 6 8 6 13a6 6 0 0 0 12 0c0-5-6-11-6-11z" stroke="var(--cyan)"/>
+                                            <path d="M12 2v20" stroke="var(--cyan)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">MongoDB</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 80</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>DOCUMENT DB</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+80% FLEXIBLE</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="80%" style="--progress-color: var(--cyan);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">80%</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Tools & Practices -->
+                    <div class="arsenal-column glow-violet">
+                        <div class="arsenal-column-header">
+                            <span class="column-jp">道具と習慣</span>
+                            <h3 class="column-title">TOOLS & PRACTICE</h3>
+                        </div>
+                        <div class="arsenal-skills-list">
+
+                            <!-- Docker -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="4" y="14" width="4" height="4" stroke="var(--purple-light)"/>
+                                            <rect x="10" y="14" width="4" height="4" stroke="var(--purple-light)"/>
+                                            <rect x="16" y="14" width="4" height="4" stroke="var(--purple-light)"/>
+                                            <rect x="7" y="9" width="4" height="4" stroke="var(--purple-light)"/>
+                                            <rect x="13" y="9" width="4" height="4" stroke="var(--purple-light)"/>
+                                            <path d="M2 19h20" stroke="var(--purple-light)" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Docker</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 85</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>CONTAINER ENGINE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+85% SHIELD</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="85%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">85%</span>
+                                </div>
+                            </div>
+
+                            <!-- Git -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="18" cy="18" r="3" stroke="var(--purple-light)"/>
+                                            <circle cx="6" cy="6" r="3" stroke="var(--purple-light)"/>
+                                            <circle cx="6" cy="18" r="3" stroke="var(--purple-light)"/>
+                                            <path d="M6 9v6M9 15h6a3 3 0 0 0 3-3V9" stroke="var(--purple-light)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Git</h4>
+                                        <span class="skill-rarity legendary">LEGENDARY</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 90</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>VERSION SYSTEM</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+90% CONTROL</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="90%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">90%</span>
+                                </div>
+                            </div>
+
+                            <!-- Relevance AI -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="5" r="2.5" stroke="var(--purple-light)"/>
+                                            <circle cx="5" cy="12" r="2.5" stroke="var(--purple-light)"/>
+                                            <circle cx="19" cy="12" r="2.5" stroke="var(--purple-light)"/>
+                                            <circle cx="12" cy="19" r="2.5" stroke="var(--purple-light)"/>
+                                            <line x1="12" y1="7.5" x2="12" y2="16.5" stroke="var(--purple-light)"/>
+                                            <line x1="7.5" y1="12" x2="16.5" y2="12" stroke="var(--purple-light)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Relevance AI</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 88</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>LLM AGENT BUILD</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+88% AGENTIC</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="88%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">88%</span>
+                                </div>
+                            </div>
+
+                            <!-- Linux -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="var(--purple-light)"/>
+                                            <path d="m6 8 3 3-3 3M11 14h4" stroke="var(--purple-light)" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Linux</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 85</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>SYSTEM SHELL</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+85% COMMAND</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="85%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">85%</span>
+                                </div>
+                            </div>
+
+                            <!-- Prompt Eng. -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m19 2 3 3L6 21H3v-3L19 2z" stroke="var(--purple-light)"/>
+                                            <path d="M19 9h2M15 5h2M11 2h2" stroke="var(--purple-light)" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Prompt Eng.</h4>
+                                        <span class="skill-rarity mythic">MYTHIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 92</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>LLM DIRECTIVE</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+92% ATTENTION</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="92%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">92%</span>
+                                </div>
+                            </div>
+
+                            <!-- Data Modeling -->
+                            <div class="skill-card holographic-glare">
+                                <div class="skill-card-glow"></div>
+                                <div class="skill-header">
+                                    <div class="skill-icon-wrapper">
+                                        <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="3" width="7" height="6" rx="1" stroke="var(--purple-light)"/>
+                                            <rect x="15" y="3" width="7" height="6" rx="1" stroke="var(--purple-light)"/>
+                                            <rect x="8" y="15" width="8" height="6" rx="1" stroke="var(--purple-light)"/>
+                                            <path d="M6 9v3h6M18 9v3h-6M12 12v3" stroke="var(--purple-light)"/>
+                                        </svg>
+                                    </div>
+                                    <div class="skill-meta">
+                                        <h4 class="skill-name">Data Modeling</h4>
+                                        <span class="skill-rarity epic">EPIC</span>
+                                    </div>
+                                    <span class="skill-level-badge">Lv. 85</span>
+                                </div>
+                                <div class="skill-attributes">
+                                    <div class="skill-attr"><span>TYPE</span><strong>SCHEMA DESIGN</strong></div>
+                                    <div class="skill-attr"><span>CRIT</span><strong>+85% DENSITY</strong></div>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress-track">
+                                        <div class="skill-progress-fill" data-progress="85%" style="--progress-color: var(--gold-light);"></div>
+                                    </div>
+                                    <span class="skill-progress-percentage">85%</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 3. PROJECTS (CHRONICLES) -->
+        <section id="projects">
+            <div class="rain-overlay"></div>
+            <div class="kanji-watermark" data-speed="0.15">伝説</div>
+
+            <div class="container reveal">
+                <div class="section-header cyber-reveal">
+                    <span class="section-label">CHRONICLES</span>
+                    <h2 class="section-title justify-center">The Chronicles <span class="jp">伝説</span></h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- FEATURED PROJECT: full width -->
+                    <div class="scroll-card scroll-card-featured open holographic-glare">
+                        <div class="scroll-chapter">第一章 · FEATURED</div>
+                        <div class="scroll-badge badge-epic">EPIC</div>
+                        <div class="scroll-body">
+                            <div class="scroll-title-jp">視覚教育</div>
+                            <h3 class="scroll-title">EduVision AI</h3>
+                            <p class="scroll-desc">A dual-backend (Python + GoLang) video learning assistant. Extracts transcripts via YouTube API, generates AI summaries &amp; quizzes using Gemini 1.5, and answers context-aware queries via MistralAI. Optimized processing speed by <strong>80%</strong> — from 50s to 10s. Won 1st Prize at Tejas 2k25 National Expo.</p>
+                            <div class="scroll-tags">
+                                <span class="tag-chip">Python</span>
+                                <span class="tag-chip">GoLang</span>
+                                <span class="tag-chip">Gemini AI</span>
+                                <span class="tag-chip">Mistral</span>
+                                <span class="tag-chip">FastAPI</span>
+                                <span class="tag-chip">YouTube API</span>
+                            </div>
+                            <div class="featured-metrics">
+                                <div class="feat-metric"><span class="feat-num">80%</span><span class="feat-lbl">Speed Gain</span></div>
+                                <div class="feat-metric"><span class="feat-num">1st</span><span class="feat-lbl">Prize Expo</span></div>
+                                <div class="feat-metric"><span class="feat-num">2</span><span class="feat-lbl">AI Backends</span></div>
+                            </div>
+                            <div class="scroll-actions">
+                                <a href="https://github.com/AdityaPatki77" class="btn-stamp" target="_blank" rel="noopener noreferrer">
+                                    <span>GITHUB</span> <span class="stamp-jp">源</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P2 -->
+                    <div class="scroll-card open holographic-glare">
+                        <div class="scroll-chapter">第二章</div>
+                        <div class="scroll-badge badge-rare">RARE</div>
+                        <div class="scroll-body">
+                            <div class="scroll-title-jp">薬草園</div>
+                            <h3 class="scroll-title">Virtual Herbal Garden</h3>
+                            <p class="scroll-desc">Interactive 3D web app cataloging medicinal plants. Features browser-rendered 3D models, botanical datasets, and immersive UI to explore herbal properties.</p>
+                            <div class="scroll-tags">
+                                <span class="tag-chip">Node.js</span>
+                                <span class="tag-chip">MongoDB</span>
+                                <span class="tag-chip">Three.js</span>
+                                <span class="tag-chip">Blender</span>
+                            </div>
+                            <div class="scroll-actions">
+                                <a href="https://github.com/AdityaPatki77" class="btn-stamp" target="_blank" rel="noopener noreferrer">
+                                    <span>GITHUB</span> <span class="stamp-jp">源</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P3 -->
+                    <div class="scroll-card open holographic-glare">
+                        <div class="scroll-chapter">第三章</div>
+                        <div class="scroll-badge badge-legendary">LEGEND</div>
+                        <div class="scroll-body">
+                            <div class="scroll-title-jp">営業侍</div>
+                            <h3 class="scroll-title">AI Sales Agent</h3>
+                            <p class="scroll-desc">Autonomous multi-agent AI system for full-cycle sales workflows. Researches leads, drafts personalized outreach, and processes replies using advanced agentic orchestration.</p>
+                            <div class="scroll-tags">
+                                <span class="tag-chip">Relevance AI</span>
+                                <span class="tag-chip">Multi-agent LLMs</span>
+                                <span class="tag-chip">LangChain</span>
+                            </div>
+                            <div class="scroll-actions">
+                                <a href="https://github.com/AdityaPatki77" class="btn-stamp" target="_blank" rel="noopener noreferrer">
+                                    <span>GITHUB</span> <span class="stamp-jp">源</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P4 -->
+                    <div class="scroll-card open holographic-glare">
+                        <div class="scroll-chapter">第四章</div>
+                        <div class="scroll-badge badge-hard">HARD</div>
+                        <div class="scroll-body">
+                            <div class="scroll-title-jp">錬金術</div>
+                            <h3 class="scroll-title">Airbnb ELT Pipeline</h3>
+                            <p class="scroll-desc">End-to-end ELT pipeline using Medallion Architecture. Loads Airbnb data from S3 → Snowflake via dbt. Implements SCD Type 2, Star Schema, and Jinja SQL.</p>
+                            <div class="scroll-tags">
+                                <span class="tag-chip">AWS S3</span>
+                                <span class="tag-chip">Snowflake</span>
+                                <span class="tag-chip">dbt</span>
+                                <span class="tag-chip">Airflow</span>
+                            </div>
+                            <div class="scroll-actions">
+                                <a href="https://github.com/AdityaPatki77" class="btn-stamp" target="_blank" rel="noopener noreferrer">
+                                    <span>GITHUB</span> <span class="stamp-jp">源</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P5 -->
+                    <div class="scroll-card open holographic-glare">
+                        <div class="scroll-chapter">第五章</div>
+                        <div class="scroll-badge badge-rare">RARE</div>
+                        <div class="scroll-body">
+                            <div class="scroll-title-jp">火花の流</div>
+                            <h3 class="scroll-title">PySpark ETL Pipeline</h3>
+                            <p class="scroll-desc">Batch pipeline processing NYC Taxi dataset with PySpark + Airflow in Docker. Follows Medallion Architecture for scalable transformation and schema normalization.</p>
+                            <div class="scroll-tags">
+                                <span class="tag-chip">PySpark</span>
+                                <span class="tag-chip">Airflow</span>
+                                <span class="tag-chip">Docker</span>
+                                <span class="tag-chip">Medallion</span>
+                            </div>
+                            <div class="scroll-actions">
+                                <a href="https://github.com/AdityaPatki77" class="btn-stamp" target="_blank" rel="noopener noreferrer">
+                                    <span>GITHUB</span> <span class="stamp-jp">源</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 4. EXPERIENCE (JOURNEY) -->
+        <section id="experience">
+            <div class="kanji-watermark" data-speed="0.1">旅行</div>
+
+            <div class="container reveal">
+                <div class="section-header cyber-reveal">
+                    <span class="section-label">JOURNEY</span>
+                    <h2 class="section-title justify-center">The Journey <span class="jp">旅</span></h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-entry">
+                        <div class="lantern-connector"></div>
+                        <div class="lantern-card glow-cyan holographic-glare">
+                            <span class="lantern-date" style="color: var(--cyan);">MAR 2024 - PRESENT</span>
+                            <h3 class="lantern-role">AI Developer</h3>
+                            <div class="lantern-company">Freelance / Indie</div>
+                            <ul class="lantern-bullets cyan-bullets">
+                                <li>Architecting agentic LLM systems with LangChain and Relevance AI.</li>
+                                <li>Designing and deploying full-stack AI platforms with generative video workflows.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-entry">
+                        <div class="lantern-connector"></div>
+                        <div class="lantern-card holographic-glare">
+                            <span class="lantern-date">OCT 2023 - DEC 2023</span>
+                            <h3 class="lantern-role">Data Science Intern</h3>
+                            <div class="lantern-company">Corizo</div>
+                            <ul class="lantern-bullets">
+                                <li>Analyzed large datasets to uncover actionable business insights using Python and
+                                    Pandas.</li>
+                                <li>Developed and optimized machine learning models to improve predictive accuracy by
+                                    15%.</li>
+                                <li>Collaborated with senior scientists to implement automated data cleaning pipelines.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-entry">
+                        <div class="lantern-connector"></div>
+                        <div class="lantern-card holographic-glare">
+                            <span class="lantern-date">2022 - 2026</span>
+                            <h3 class="lantern-role">B.Tech IT Scholar</h3>
+                            <div class="lantern-company">Anurag University, Hyderabad</div>
+                            <ul class="lantern-bullets">
+                                <li>Maintaining a strong CGPA of 8.8 while pursuing complex electives.</li>
+                                <li>Leading multiple technical club projects, focusing on AI and system design.</li>
+                                <li>Consistently researching emerging tech: LLMs, agentic systems, and cloud
+                                    architecture.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 5. ACHIEVEMENTS (HONOR) -->
+        <section id="achievements">
+            <div class="kanji-watermark" data-speed="0.15">名誉</div>
+
+            <div class="container reveal">
+                <div class="section-header cyber-reveal">
+                    <span class="section-label">HONOR</span>
+                    <h2 class="section-title justify-center">Wall of Honor <span class="jp">名誉</span></h2>
+                </div>
+
+                <div class="achievements-grid">
+                    <!-- Achievement 1: Tejas 2k25 -->
+                    <div class="honor-card holographic-glare">
+                        <div class="honor-tag">CHAMPION</div>
+                        <div class="honor-badge">
+                            <span class="dot"></span>
+                            <span>JAN 27, 2025</span>
+                        </div>
+                        <h3 class="honor-title">Tejas 2k25 Project Expo</h3>
+                        <div class="honor-images-split">
+                            <div class="honor-image-main">
+                                <img src="assets/achievements/tejas_group.jpg" alt="Tejas 2k25 Team">
+                            </div>
+                            <div class="honor-image-side">
+                                <img src="assets/achievements/tejas_trophy.png" alt="Tejas 2k25 Trophy">
+                            </div>
+                        </div>
+                        <p class="honor-desc">
+                            Awarded <strong>1st Prize</strong> in the IT Department at the Tejas 2k25 National Engineering Expo. 
+                            Secured the top position among 200+ competing innovations with our project <strong>EduVision AI</strong>, 
+                            celebrated for its innovative dual-backend system and seamless LLM integration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 6. ABOUT (WARRIOR) -->
+        <section id="about">
+            <div class="about-ink-wash"></div>
+            <div class="kanji-watermark" data-speed="0.1">武者</div>
+
+            <div class="container reveal">
+                <div class="about-grid">
+
+                    <div class="char-profile">
+                        <div class="char-header">
+                            <div class="char-header-dot"></div>
+                            <span class="char-header-label">STATUS SCREEN</span>
+                        </div>
+                        <div class="char-body">
+                            <h3 class="char-name">ADITYA PATKI</h3>
+                            <div class="char-name-jp">アディティア・パツキ</div>
+
+                            <div class="char-info-row">
+                                <span class="char-info-label">CLASS</span>
+                                <span class="char-info-value">Data Engineer / AI Dev</span>
+                            </div>
+                            <div class="char-info-row">
+                                <span class="char-info-label">ORIGIN</span>
+                                <span class="char-info-value">Hyderabad, India</span>
+                            </div>
+                            <div class="char-info-row">
+                                <span class="char-info-label">RANK</span>
+                                <span class="char-info-value">B.Tech IT (Anurag University)</span>
+                            </div>
+                            <div class="char-info-row">
+                                <span class="char-info-label">ACTIVE</span>
+                                <span class="char-info-value">2022 — Present</span>
+                            </div>
+
+                            <div class="char-stats">
+                                <div class="stat-row">
+                                    <div class="stat-label"><span>System Design</span> <span>Lv. 85</span></div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-label"><span>Problem Solving</span> <span>Lv. 92</span></div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-fill" data-width="92%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-label"><span>AI / ML Expertise</span> <span>Lv. 88</span></div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-fill" data-width="88%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-row">
+                                    <div class="stat-label"><span>Creativity</span> <span>Lv. 95</span></div>
+                                    <div class="stat-bar-track">
+                                        <div class="stat-bar-fill" data-width="95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cyber RPG Equipped Inventory -->
+                            <div class="char-inventory-section">
+                                <div class="char-inventory-header">
+                                    <span>EQUIPPED ARSENAL</span>
+                                    <span>6 / 6 SLOTS ACTIVE</span>
+                                </div>
+                                <div class="char-inventory-grid">
+                                    <div class="inv-slot active-slot" data-item="katana">
+                                        <span class="inv-icon">⚔️</span>
+                                        <span class="inv-tooltip">PySpark Katana</span>
+                                    </div>
+                                    <div class="inv-slot" data-item="cloud">
+                                        <span class="inv-icon">☁️</span>
+                                        <span class="inv-tooltip">AWS Shroud</span>
+                                    </div>
+                                    <div class="inv-slot" data-item="relic">
+                                        <span class="inv-icon">🔮</span>
+                                        <span class="inv-tooltip">Gemini Amulet</span>
+                                    </div>
+                                    <div class="inv-slot" data-item="scroll">
+                                        <span class="inv-icon">📜</span>
+                                        <span class="inv-tooltip">dbt Scroll</span>
+                                    </div>
+                                    <div class="inv-slot" data-item="boots">
+                                        <span class="inv-icon">🥾</span>
+                                        <span class="inv-tooltip">Docker Greaves</span>
+                                    </div>
+                                    <div class="inv-slot" data-item="ring">
+                                        <span class="inv-icon">💍</span>
+                                        <span class="inv-tooltip">Airflow Ring</span>
+                                    </div>
+                                </div>
+
+                                <div class="inv-details-panel">
+                                    <div class="inv-details-header">
+                                        <span class="inv-item-rarity legendary" id="inv-item-rarity">LEGENDARY</span>
+                                        <h4 class="inv-item-title" id="inv-item-title">Katana of PySpark</h4>
+                                    </div>
+                                    <p class="inv-item-desc" id="inv-item-desc">A blade folded 1,000 times in the fires of massive datasets. Slices through Terabytes of raw logs in seconds.</p>
+                                    <div class="inv-item-stats" id="inv-item-stats">
+                                        <div class="inv-stat"><span>THROUGHPUT:</span><span>+95%</span></div>
+                                        <div class="inv-stat"><span>INFERENCE:</span><span>MAX</span></div>
+                                    </div>
+                                </div>
+                            </div> <!-- closes char-inventory-section -->
+                        </div> <!-- closes char-body -->
+                    </div> <!-- closes char-profile -->
+
+                        <div class="about-bio">
+                            <h3 class="about-bio-title">The Warrior's Path</h3>
+                            <div class="about-bio-title-jp">武士の道</div>
+
+                            <p>I forge systems. With a blade sharpened by curiosity and discipline, I architect robust data pipelines and engineer intelligent AI solutions. My journey began in <strong class="highlight-gold">Hyderabad</strong>, but the code I write impacts the digital globe.</p>
+
+                            <p>Currently pursuing my B.Tech in IT at <strong class="highlight">Anurag University</strong>, I've trained in the arts of <strong class="highlight">Data Engineering</strong>, <strong class="highlight">Cloud Architecture</strong>, and <strong class="highlight">Agentic AI</strong>. Every bug is an honorable opponent. Every new technology, a weapon to master.</p>
+
+                            <!-- Quick Fact Tiles -->
+                            <div class="bio-fact-grid">
+                                <div class="bio-fact">
+                                    <span class="bio-fact-icon">🎓</span>
+                                    <div>
+                                        <div class="bio-fact-title">Education</div>
+                                        <div class="bio-fact-val">B.Tech IT · Anurag University · CGPA 8.8</div>
+                                    </div>
+                                </div>
+                                <div class="bio-fact">
+                                    <span class="bio-fact-icon">📍</span>
+                                    <div>
+                                        <div class="bio-fact-title">Location</div>
+                                        <div class="bio-fact-val">Hyderabad, India</div>
+                                    </div>
+                                </div>
+                                <div class="bio-fact">
+                                    <span class="bio-fact-icon">💼</span>
+                                    <div>
+                                        <div class="bio-fact-title">Focus</div>
+                                        <div class="bio-fact-val">Data Engineering · Agentic AI</div>
+                                    </div>
+                                </div>
+                                <div class="bio-fact">
+                                    <span class="bio-fact-icon">🏆</span>
+                                    <div>
+                                        <div class="bio-fact-title">Achievement</div>
+                                        <div class="bio-fact-val">1st Prize — Tejas 2k25 National Expo</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Resume Download CTA -->
+                            <a href="#" class="btn-resume-dl" download>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>DOWNLOAD RESUME</span>
+                                <span class="btn-resume-jp">履歴書</span>
+                            </a>
+
+                            <p style="margin-top: 1.5rem;">Whether it’s weaving multi-agent LLM logic or constructing massive Snowflake data warehouses,
+                                I bring the precision of a samurai to the digital realm. The era of slow, monolithic code is
+                                over. <strong class="highlight-gold">Welcome to the future.</strong></p>
+                        </div> <!-- closes about-bio -->
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- 7. CONTACT (SEND WORD) -->
+        <section id="contact">
+            <div class="contact-lanterns">
+                <svg class="contact-lantern-svg" viewBox="0 0 100 150" fill="none" stroke="var(--crimson)">
+                    <path
+                        d="M20,30 L80,30 C90,30 95,50 95,75 C95,100 90,120 80,120 L20,120 C10,120 5,100 5,75 C5,50 10,30 20,30 Z M50,10 L50,30 M50,120 L50,140 M20,140 L80,140"
+                        stroke-width="4" />
+                </svg>
+                <svg class="contact-lantern-svg" viewBox="0 0 100 150" fill="none" stroke="var(--crimson)">
+                    <path
+                        d="M20,30 L80,30 C90,30 95,50 95,75 C95,100 90,120 80,120 L20,120 C10,120 5,100 5,75 C5,50 10,30 20,30 Z M50,10 L50,30 M50,120 L50,140 M20,140 L80,140"
+                        stroke-width="4" />
+                </svg>
+            </div>
+
+            <div class="container reveal">
+                <div class="section-header cyber-reveal">
+                    <span class="section-label">SEND WORD</span>
+                    <h2 class="section-title justify-center">The Dojo <span class="jp">伝言</span></h2>
+                </div>
+
+                <div class="contact-dojo">
+
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label class="form-label">YOUR NAME 名前</label>
+                                <input type="text" class="form-input" placeholder="Wandering Samurai" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">YOUR RAVEN (EMAIL) メール</label>
+                                <input type="email" class="form-input" placeholder="ronin@valley.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">THE MESSAGE 伝言</label>
+                                <textarea class="form-textarea" placeholder="I bring an offer of alliance..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit-stamp">
+                                <span>SEND MESSAGE</span>
+                                <span class="stamp-jp">送信</span>
+                            </button>
+                        </form>
+
+                        <div id="submit-success" class="submit-success">
+                            <div class="success-kanji">送信完了</div>
+                            <div class="success-text">Your message flies across the wind. Expect a swift reply.</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-plaques">
+                        <a href="mailto:adityapatki5@gmail.com" class="ema-plaque">
+                            <div class="ema-icon">📧</div>
+                            <div class="ema-text">
+                                <span class="ema-label">ELECTRONIC RAVEN</span>
+                                <span class="ema-value">adityapatki5@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/aditya-patki" target="_blank" rel="noopener noreferrer"
+                            class="ema-plaque">
+                            <div class="ema-icon">💼</div>
+                            <div class="ema-text">
+                                <span class="ema-label">THE GUILD</span>
+                                <span class="ema-value">linkedin.com/in/aditya-patki</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/AdityaPatki77" target="_blank" rel="noopener noreferrer"
+                            class="ema-plaque">
+                            <div class="ema-icon">🐙</div>
+                            <div class="ema-text">
+                                <span class="ema-label">THE ARMORY</span>
+                                <span class="ema-value">github.com/AdityaPatki77</span>
+                            </div>
+                        </a>
+                        <div class="ema-plaque" style="cursor: default;">
+                            <div class="ema-icon">📱</div>
+                            <div class="ema-text">
+                                <span class="ema-label">SIGNAL FIRE</span>
+                                <span class="ema-value">+91 9158107782</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <p class="footer-text">Forged with <span class="crimson">blood</span> and code by Aditya Patki © 2026</p>
+            <p class="footer-text"><span class="jp">侍エンジニア</span></p>
+        </footer>
+
+        <!-- Floating Status Bar -->
+        <div class="floating-status-bar">
+            <div class="status-node">
+                <span class="status-dot"></span>
+                <span>SYSTEM: NOMINAL</span>
+            </div>
+            <div class="status-node">
+                <span>COORD: 12.9716° N, 77.5946° E</span>
+            </div>
+            <div class="status-node">
+                <span>SESSION_ID: 0x8F2A9C</span>
+            </div>
+            <div class="status-node">
+                <span>LOAD: 4.2%</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

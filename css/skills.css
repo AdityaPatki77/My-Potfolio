@@ -1,0 +1,423 @@
+/* ============================================================
+   SKILLS — AAA Arsenal with High-Density Dashboard Columns
+   ============================================================ */
+#skills {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient top light */
+#skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--crimson) 30%, var(--gold-light) 50%, var(--cyan) 70%, transparent);
+  box-shadow: 0 0 45px rgba(227, 41, 41, 0.45);
+  z-index: 1;
+}
+
+#skills .kanji-watermark {
+  top: 50%;
+  right: -3%;
+  transform: translateY(-50%);
+  opacity: 0.035;
+  color: var(--gold);
+}
+
+/* --- Top Slash Bar --- */
+.skills-slash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold-light), var(--cyan));
+  transition: width 1.2s var(--ease-ink);
+  box-shadow: 0 0 20px rgba(227, 41, 41, 0.5);
+  z-index: 2;
+}
+
+#skills.in-view .skills-slash { width: 100%; }
+
+/* --- Arsenal Dashboard Grid --- */
+.arsenal-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1200px) {
+  .arsenal-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 700px) {
+  .arsenal-dashboard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* --- Arsenal Columns (Glassmorphism Cards) --- */
+.arsenal-column {
+  background: rgba(10, 12, 22, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(240, 236, 228, 0.06);
+  border-radius: 12px;
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-smooth);
+}
+
+/* Iridescent background glow on hover */
+.arsenal-column::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.arsenal-column:hover {
+  transform: translateY(-8px);
+  border-color: rgba(240, 236, 228, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+}
+
+.arsenal-column:hover::before {
+  opacity: 0.05;
+}
+
+/* Specific glows */
+.glow-crimson:hover {
+  border-color: rgba(227, 41, 41, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(227, 41, 41, 0.15);
+}
+.glow-crimson::before {
+  background: radial-gradient(circle at center, var(--crimson) 0%, transparent 70%);
+}
+
+.glow-gold:hover {
+  border-color: rgba(230, 184, 92, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(230, 184, 92, 0.15);
+}
+.glow-gold::before {
+  background: radial-gradient(circle at center, var(--gold) 0%, transparent 70%);
+}
+
+.glow-cyan:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 229, 255, 0.15);
+}
+.glow-cyan::before {
+  background: radial-gradient(circle at center, var(--cyan) 0%, transparent 70%);
+}
+
+.glow-violet:hover {
+  border-color: rgba(197, 108, 240, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(197, 108, 240, 0.15);
+}
+.glow-violet::before {
+  background: radial-gradient(circle at center, rgba(197, 108, 240, 0.8) 0%, transparent 70%);
+}
+
+/* --- Column Header --- */
+.arsenal-column-header {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(240, 236, 228, 0.05);
+  padding-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.column-jp {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.65;
+  letter-spacing: 0.1em;
+}
+
+.column-title {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+/* Column hover adjustments */
+.glow-crimson:hover .column-title { color: var(--crimson-light); }
+.glow-gold:hover .column-title { color: var(--gold-light); }
+.glow-cyan:hover .column-title { color: var(--cyan-light); }
+.glow-violet:hover .column-title { color: #d48cff; }
+
+/* --- Skills List --- */
+.arsenal-skills-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* --- Holographic Tactical Skill Card --- */
+.skill-card {
+  background: rgba(9, 11, 20, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 1.1rem 1rem 0.95rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-spring);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: rgba(14, 17, 30, 0.7);
+}
+
+/* Iridescent holographic overlay */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.03) 50%, rgba(255,255,255,0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Dynamic column glow inheritance */
+.glow-crimson .skill-card:hover {
+  border-color: rgba(227, 41, 41, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(227, 41, 41, 0.1);
+}
+
+.glow-gold .skill-card:hover {
+  border-color: rgba(230, 184, 92, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(230, 184, 92, 0.1);
+}
+
+.glow-cyan .skill-card:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+.glow-violet .skill-card:hover {
+  border-color: rgba(197, 108, 240, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(197, 108, 240, 0.1);
+}
+
+/* --- Card Header --- */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 3;
+}
+
+.skill-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.skill-svg-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.skill-card:hover .skill-svg-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.skill-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.skill-name {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Rarity Badges */
+.skill-rarity {
+  font-family: var(--font-body);
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  width: fit-content;
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+}
+
+.skill-rarity.legendary {
+  background: rgba(230, 184, 92, 0.08);
+  border: 1px solid rgba(230, 184, 92, 0.25);
+  color: var(--gold-light);
+}
+
+.skill-rarity.mythic {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  color: var(--cyan-light);
+}
+
+.skill-rarity.epic {
+  background: rgba(197, 108, 240, 0.08);
+  border: 1px solid rgba(197, 108, 240, 0.25);
+  color: #d48cff;
+}
+
+.skill-rarity.rare {
+  background: rgba(46, 204, 113, 0.08);
+  border: 1px solid rgba(46, 204, 113, 0.25);
+  color: #2ecc71;
+}
+
+.skill-level-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+/* --- Combat Weapon Attributes --- */
+.skill-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.05);
+  padding-top: 0.55rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.65rem;
+  position: relative;
+  z-index: 3;
+}
+
+.skill-attr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.skill-attr span {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.skill-attr strong {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+/* --- Progress Section --- */
+.skill-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 3;
+}
+
+.skill-progress-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  width: 0%; /* Dynamic fill handled by JS */
+  background: var(--progress-color, var(--crimson));
+  box-shadow: 0 0 8px var(--progress-color, var(--crimson));
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.skill-progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 6px #fff;
+  opacity: 0.8;
+}
+
+.skill-progress-percentage {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  width: 24px;
+  text-align: right;
+}
+
+/* Optimize effects for smoother mobile performance */
+@media (max-width: 768px) {
+  .skill-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(9, 11, 20, 0.8);
+  }
+}

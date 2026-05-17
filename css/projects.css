@@ -1,0 +1,322 @@
+/* ============================================================
+   PROJECTS — Cinematic Scroll Cards
+   ============================================================ */
+#projects {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* dramatic vignette top */
+#projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, rgba(10, 11, 22, 0.9), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#projects .kanji-watermark {
+  bottom: -5%;
+  left: -5%;
+  opacity: 0.03;
+  color: var(--crimson);
+}
+
+/* Ambient glow orbs */
+.projects-orb-1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(227, 41, 41, 0.06);
+  filter: blur(100px);
+  top: 20%;
+  right: -100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects-orb-2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.04);
+  filter: blur(80px);
+  bottom: 20%;
+  left: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Grid --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Scroll Card (Premium Cinematic) --- */
+.scroll-card {
+  background: rgba(8, 10, 18, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(230, 184, 92, 0.2);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+/* Top gradient bar */
+.scroll-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover inner glow */
+.scroll-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(230,184,92,0.1), transparent);
+  transition: left 0.7s var(--ease-smooth);
+  pointer-events: none;
+}
+
+.scroll-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(230, 184, 92, 0.5);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(230,184,92,0.3),
+    0 0 60px rgba(230,184,92,0.15),
+    inset 0 0 30px rgba(230,184,92,0.05);
+}
+
+.scroll-card:hover::before { opacity: 1; }
+.scroll-card:hover::after  { left: 200%; }
+
+/* --- Chapter Badge Corner --- */
+.scroll-chapter {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: rgba(216, 168, 75, 0.5);
+  letter-spacing: 0.15em;
+  z-index: 2;
+}
+
+.scroll-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  font-family: var(--font-accent);
+  font-size: 0.42rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: transform 0.5s var(--ease-spring), box-shadow 0.5s ease;
+  backdrop-filter: blur(8px);
+}
+
+.scroll-badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed inherit;
+  opacity: 0.5;
+  animation: shurikenSpin 10s linear infinite;
+}
+
+.badge-epic     { background: rgba(231,76,60,0.12); border: 2px solid rgba(232,28,28,0.7); color: #ff6b5b; box-shadow: var(--glow-red-sm); }
+.badge-rare     { background: rgba(0,229,255,0.06); border: 2px solid rgba(0,240,255,0.6); color: var(--cyan); box-shadow: var(--glow-cyan-sm); }
+.badge-legendary{ background: rgba(255,204,85,0.08); border: 2px solid rgba(230,184,92,0.7); color: var(--gold-light); box-shadow: var(--glow-gold-sm); }
+.badge-hard     { background: rgba(255,107,157,0.08); border: 2px solid rgba(255,77,136,0.6); color: var(--cherry); box-shadow: 0 0 20px rgba(255,77,136,0.5); }
+
+.scroll-card:hover .scroll-badge {
+  transform: scale(1.15) rotate(12deg);
+}
+.scroll-card:hover .scroll-badge::before {
+  animation: shurikenSpin 4s linear infinite;
+}
+
+/* --- Body --- */
+.scroll-body {
+  padding: 3.8rem 1.6rem 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+.scroll-card:hover .scroll-title { color: var(--gold-light); }
+
+.scroll-title-jp {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--gold);
+  opacity: 0.6;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.scroll-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s var(--ease-smooth), opacity 0.5s ease;
+}
+
+.scroll-card.open .scroll-desc { max-height: 250px; opacity: 1; }
+
+/* --- Tech Stack Chips --- */
+.scroll-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease 0.1s, opacity 0.4s ease 0.1s;
+}
+
+.scroll-card.open .scroll-tags { max-height: 100px; opacity: 1; }
+
+.tag-chip {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 0.2rem 0.75rem;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  border-radius: 2px;
+  color: var(--cyan);
+  letter-spacing: 0.06em;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.tag-chip:hover {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.4);
+}
+
+/* --- Actions --- */
+.scroll-actions {
+  display: flex;
+  gap: 0.75rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease 0.2s, opacity 0.4s ease 0.2s;
+}
+
+.scroll-card.open .scroll-actions { max-height: 60px; opacity: 1; }
+
+.btn-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.3rem;
+  background: rgba(227, 41, 41, 0.08);
+  border: 1px solid rgba(227, 41, 41, 0.3);
+  border-radius: 3px;
+  font-family: var(--font-accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: var(--crimson-light);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.btn-stamp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--crimson);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s var(--ease-spring);
+  opacity: 0.15;
+}
+
+.btn-stamp:hover::before { transform: scaleY(1); }
+.btn-stamp:hover {
+  border-color: var(--crimson-light);
+  box-shadow: var(--glow-ultra-red);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+.btn-stamp:active { animation: stampPress 0.3s var(--ease-spring); }
+
+/* --- Toggle hint --- */
+.scroll-toggle {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.5rem;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  font-family: var(--font-accent);
+  letter-spacing: 0.15em;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.scroll-toggle::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--text-muted);
+  opacity: 0.4;
+}
+
+.scroll-card.open .scroll-toggle { opacity: 0; }
+
+@media (max-width: 700px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
